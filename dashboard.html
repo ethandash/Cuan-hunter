@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CuanHunter Dashboard</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      color: #fff;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    .status {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      backdrop-filter: blur(5px);
+    }
+    .card h3 {
+      color: #a0d2ff;
+      margin-bottom: 10px;
+    }
+    .log {
+      font-family: monospace;
+      background: #000;
+      color: #0f0;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 0.9em;
+      white-space: pre-wrap;
+      line-height: 1.5;
+    }
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    .btn {
+      background: #ff6b6b;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.9em;
+      text-align: center;
+      flex: 1;
+      min-width: 120px;
+    }
+    .btn:hover {
+      background: #ff5252;
+    }
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9em;
+    }
+    @media (min-width: 600px) {
+      .status {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🚀 CuanHunter Dashboard</h1>
+      <p>Asisten otomasi dari MasDonk</p>
+    </header>
+
+    <div class="status">
+      <div class="card">
+        <h3>🧪 Auto-Claim Testnet</h3>
+        <div class="log" id="claim-log">
+⏳ Memuat log terakhir...
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>🌅 Laporan Harian AI</h3>
+        <div class="log" id="daily-report">
+🔍 AI sedang analisis...
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>🔗 Faucet & Testnet Utama</h3>
+      <div class="links">
+        <a href="https://faucet.bnbchain.org" class="btn" target="_blank">BNB Faucet</a>
+        <a href="https://faucet.polygon.technology" class="btn" target="_blank">Polygon</a>
+        <a href="https://faucet.zksync.io" class="btn" target="_blank">zkSync</a>
+        <a href="https://faucet.quicknode.com/arbitrum/goerli" class="btn" target="_blank">Arbitrum</a>
+        <a href="https://t.me/CuanWatcherBot" class="btn" target="_blank">Telegram Bot</a>
+      </div>
+    </div>
+
+    <footer>
+      Dibuat dengan ❤️ oleh MasDonk | Data diperbarui otomatis
+    </footer>
+  </div>
+
+  <script>
+    // Simulasi data dari GitHub Actions (bisa diganti pake fetch dari file log)
+    const claimLog = `✅ [09:00] BNB Faucet: Claim submitted!
+✅ [09:00] Polygon Faucet: Claim submitted!
+❌ [09:00] zkSync: Captcha terdeteksi
+
+✅ [10:00] BNB: Sukses
+✅ [10:00] Polygon: Sukses`;
+
+    const dailyReport = `🎯 Rekomendasi Airdrop 2025:
+- zkSync: Potensi besar, banyak aktivitas
+- Scroll: Layer 2 Ethereum, banyak testnet
+- Base: Dukungan Coinbase, komunitas aktif
+
+💡 Tips: Jangan connect wallet ke bot mencurigakan!`;
+
+    document.getElementById("claim-log").textContent = claimLog;
+    document.getElementById("daily-report").textContent = dailyReport;
+  </script>
+</body>
+</html>
