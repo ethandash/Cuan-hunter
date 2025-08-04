@@ -16,9 +16,9 @@ jobs:
           python-version: '3.10'
 
       - name: Install Dependencies
-        run: |
-          pip install selenium requests
-
+  run: |
+    pip install -r requirements.txt --user
+    
       - name: Install Chrome
         run: |
           sudo apt-get update
